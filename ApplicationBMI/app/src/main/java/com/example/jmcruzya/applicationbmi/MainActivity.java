@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.TextView;
 
 import java.util.regex.Matcher;
 
@@ -29,20 +30,25 @@ public class MainActivity extends AppCompatActivity {
         String peso = ePeso.getText().toString();
         String altura = eAltura.getText().toString();
         String regex = "\\d{1,3}";
-        //int alturaInt = Integer.parseInt(altura);
-        //int pesoInt = Integer.parseInt(peso);
+        String msg = "Los campos de peso o altura están vacios";
 
-        if(peso.isEmpty() || altura.isEmpty())
+        if(!(peso.isEmpty() && altura.isEmpty()))
         {
-            Log.e(TAG,"Los campos de peso y altura están vacios");
-            return;
+            //se crea regex en https://regex101.com/
+            msg = "Valores no numericos";
+            if(peso.matches(regex) && altura.matches(regex))
+            {
+                Log.e(TAG,msg);
+                int alturaInt = Integer.parseInt(altura);
+                int pesoInt = Integer.parseInt(peso);
+                msg =  "El resultado es: " + (alturaInt*pesoInt);
+            }
+            ((TextView)findViewById(R.id.textResultado)).setText(msg);
         }
-        //se crea regex en https://regex101.com/
-        if(peso.matches(regex) && altura.matches(regex))
+        else
         {
-            Log.e(TAG,"Los campos de peso y altura requieren valores numéricos");
+            Log.e(TAG,msg);
         }
-
 
     }
 }
