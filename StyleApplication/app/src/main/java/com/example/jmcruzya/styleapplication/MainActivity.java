@@ -26,17 +26,15 @@ import com.android.volley.RequestQueue;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonArrayRequest;
-import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.Volley;
 import com.example.jmcruzya.styleapplication.fragments.ItemFragment;
 import com.example.jmcruzya.styleapplication.utilities.ConnectionDetector;
 import com.example.jmcruzya.styleapplication.utilities.MyPreference;
+import com.example.jmcruzya.styleapplication.utilities.Point;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 
 import org.json.JSONArray;
-import org.json.JSONException;
-import org.json.JSONObject;
 
 import java.util.ArrayList;
 import java.util.List;

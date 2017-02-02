@@ -1,4 +1,4 @@
-package com.example.jmcruzya.styleapplication;
+package com.example.jmcruzya.styleapplication.utilities;
 
 import java.io.Serializable;
 
